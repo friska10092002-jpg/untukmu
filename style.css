@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ===== BACKGROUND FOTO (CUSTOM) ===== */
+#background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+
+  /* GANTI FOTO DI SINI */
+  background: url("bg.jpg") center / cover no-repeat;
+
+  /* EFEK GELAP BIAR TEKS JELAS */
+  filter: brightness(0.45);
+}
+
+/* ===== OPENING ===== */
+#opening {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.opening-content {
+  text-align: center;
+}
+
+#openBtn {
+  margin-top: 40px;
+  padding: 14px 38px;
+  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+}
+
+#openBtn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+
+.opening-text p {
+  font-size: 1.6em;
+  text-align: center;
+  opacity: 0;
+  animation: fadeText 4s forwards;
+}
+
+.opening-text p:nth-child(2) {
+  animation-delay: 2s;
+}
+
+/* ===== MAIN ===== */
+.container {
+  text-align: center;
+  padding: 90px 20px;
+  min-height: 160vh; /* BIAR BISA SCROLL */
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 1.6em;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  animation-delay: 2s;
+}
+
+.letter {
+  max-width: 760px;
+  margin: auto;
+  background: rgba(0,0,0,0.45);
+  padding: 35px;
+  border-radius: 20px;
+  line-height: 1.9;
+}
+
+.line {
+  opacity: 0;
+  animation: appear 1s forwards;
+}
+
+.ending {
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeIn 4s forwards;
+  animation-delay: 14s;
+}
+
+/* ===== SAKURA ===== */
+#sakura span {
+  position: absolute;
+  top: -10%;
+  width: 12px;
+  height: 12px;
+  background: pink;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: fall linear infinite;
+}
+
+/* ===== ANIMASI ===== */
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+@keyframes appear {
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeText {
+  to { opacity: 1; }
+}
